@@ -22,3 +22,5 @@ FROM base AS result
 COPY --from=electrs-build /root/.cargo/bin/electrs /usr/bin/electrs
 
 WORKDIR /
+
+ENTRYPOINT ["electrs"]
