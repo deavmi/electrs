@@ -24,6 +24,8 @@ COPY --from=electrs-build /root/.cargo/bin/electrs /usr/bin/electrs
 WORKDIR /
 
 # Switch to user provided
+ENV USER_UID=1000
+ENV USER_GID=1003
 USER ${USER_UID}:${USER_GID}
 
 ENTRYPOINT ["electrs"]
